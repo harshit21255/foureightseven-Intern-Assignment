@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product Page</title>
+        <link href = "styles.css" rel = "stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    </head>
+
+    <body>
+        <div class = "top-text">
+            <p>HI! WE  &lt3 YOU FOR VISITING OUR SITE</p>
+        </div>
+        <div class = "logo">
+            <img src = "https://www.graza.co/cdn/shop/files/graza-logo.png?v=1638847956">
+        </div>
+        <div class = "container">
+            <div class = "left-section">
+                
+            </div>
+            <div class = "right-section">
+                <div class = right-container>
+                    
+                    <div class = "product-title">
+                        <h1> “Drizzle” & “Sizzle” <u>Extra Virgin Olive Oil</u></h1>
+                    </div>
+                    <div class = "review">
+                        <p>★★★★★</p>
+                        <p>1573 Reviews</p>
+                    </div>
+
+                    <div class = "box">
+                        <p class = "quantity"> Quantity </p>
+                        <div class = "q-boxes">
+                            <button class = "q-box" onclick="toggleSelection(this)">
+                                <p class = "set"> 1 <br> Set <p>
+                                <p class = "discount"> <br> +10% off</p>
+                            </button>
+                            <button class = "q-box" onclick="toggleSelection(this)">
+                                <p class = "set"> 2 <br> Set</p>
+                                <p class = "discount"> <br> Free Shipping! +14% off</p></p>
+                            </button>
+                            <button class = "q-box" onclick="toggleSelection(this)">
+                                <p class = "set"> 3 <br> Set</p>
+                                <p class = "discount"> <br> Free Shipping! +15% off</p></p>
+                            </button>
+                            <button class = "q-box" onclick="toggleSelection(this)">
+                                <p class = "set"> 6 <br> Set</p>
+                                <p class = "discount"> <br> Free Shipping! +17% off</p></p>
+                            </button>
+                            
+                        </div>
+                        <div class = "dotted-line"> <hr> </div>
+                        <div class = "buy-select"> 
+                            <div class = "flex">
+                            <button class = "round-button" onclick="toggleBuySelection(this)"></button>
+                            <p class = "buy-text">One Time Purchase</p>
+                            </div>
+                            <div class = "money"><p>$37</p></div>
+                        </div>
+
+                        <div class = "dotted-line"> <hr> </div>
+                        <div class = "buy-select"> 
+                            <div class = "flex">
+                            <button id = "subsB" class = "round-button" onclick="toggleBuySelection(this)"></button>
+                            <p class = "buy-text">Subscribe & Save</p>
+                            </div>
+                            <div class = "money">
+                                <span class="inline-block line-through opacity-50 font-size:10">$37</span>
+                                <p cl>$33.30</p>
+                            </div>
+                        </div>
+
+                        <div class = "dotted-line"> <hr> </div>
+                        
+                        <div class = "hide-subscribe">
+                            <button class = "addButton">Add to Cart - $37</button>
+                            <p class ="second-bottom-text">*HEADS UP! MULTIPLE SETS OF DRIZZLE & SIZZLE SHIP IN THE SAME BOX! TO ORDER INDIVIDUALLY PACKAGED GIFT SETS, <u>CLICK HERE!</u> 🎁</p>
+                            <p class = "first-bottom-text"><u>Send as a gift</u></p>
+                        </div>
+
+                        <div class = "hide-one">
+                            <button class = "addButton">Subs - $33.30</button>
+                            <p class = "first-bottom-text">Skip or Cancel Anytime</p>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </body>
+    <script>
+        function toggleSelection(button) {
+            var selectedButton = document.querySelector('.q-box.selected');
+            if (selectedButton) {
+                selectedButton.classList.remove('selected');
+            }
+            button.classList.add('selected');
+            document.querySelector('.hide-subscribe').style.display = 'none';
+            document.querySelector('.hide-one').style.display = 'block';
+        }
+    
+        function toggleBuySelection(button) {
+            var selecteBuydButton = document.querySelector('.round-button.selected');
+            if (selecteBuydButton) {
+                selecteBuydButton.classList.remove('selected');
+            }
+            button.classList.add('selected');
+            document.querySelector('.hide-subscribe').style.display = 'block';
+            document.querySelector('.hide-one').style.display = 'none';
+        }
+    
+        document.getElementById('oneB').addEventListener('click', function() {
+            document.querySelector('.hide-subscribe').style.display = 'none';
+        });
+    
+        document.getElementById('subsB').addEventListener('click', function() {
+            document.querySelector('.hide-one').style.display = 'none';
+        });
+    </script>
+    
